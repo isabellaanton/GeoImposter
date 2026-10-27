@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050914"><title>GeoImposter</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="game-shell">
+  <canvas id="globe" aria-label="Interactive globe. Drag to rotate and select a country."></canvas><div class="stars" aria-hidden="true"></div>
+  <header class="hud hidden" id="hud"><div class="brand">GEO<span>IMPOSTER</span></div><div class="round-status"><small id="mode-label">MODO</small><strong id="round-label">Rodada 1</strong></div><div class="stats"><div><small>TEMPO</small><strong id="timer">01:30</strong></div><div><small>PONTOS</small><strong id="score">0000</strong></div><div id="lives-wrap"><small>VIDAS</small><strong id="lives">♥ ♥ ♥</strong></div></div></header>
+  <div id="loading" class="screen visible"><div class="loader"></div><p>Preparando o mapa…</p></div>
+  <section id="menu" class="screen panel hidden" aria-labelledby="title"><p class="eyebrow">Geografia, história e geopolítica</p><h1 id="title">Geo<em>Imposter</em></h1><p class="lede">Descubra países impossíveis, sobreviva ao Game Show ou viaje pela linha do tempo do mundo.</p><div class="mode-grid"><button class="mode-card active" data-mode="imposter"><b>País Impostor</b><span>Encontre a nação falsa antes do tempo acabar.</span></button><button class="mode-card" data-mode="gameshow"><b>Game Show</b><span>Quatro jogadores, rodadas eliminatórias e uma única chance.</span></button><button class="mode-card" data-mode="history"><b>Modo História</b><span>Missões cronológicas, impérios e pistas no globo.</span></button></div><button id="play" class="primary">Jogar <span>→</span></button><p class="hint">Arraste para explorar · Scroll ou pinça para zoom · Clique em terra para responder</p></section>
+  <div id="prompt" class="prompt hidden"></div><aside id="game-show-panel" class="side-panel hidden"><p class="eyebrow">Ranking da rodada</p><ol id="player-ranking"></ol><p id="show-rule" class="panel-note"></p></aside><aside id="history-panel" class="side-panel hidden"><p class="eyebrow" id="era-label"></p><h2 id="mission-title"></h2><p id="mission-text"></p><div class="year-track"><span id="year-start"></span><input id="year-slider" type="range" min="1700" max="1960" step="1"><span id="year-value"></span></div><div id="country-lore" class="country-lore">Clique em um país para abrir seu contexto histórico.</div></aside>
+  <section id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-live="polite"><div class="modal-card"><p id="modal-kicker" class="eyebrow"></p><h2 id="modal-title"></h2><p id="modal-text"></p><button id="modal-action" class="primary"></button></div></section>
+</main><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js"}}</script><script type="module" src="app.js"></script>
+</body>
+</html>
+
